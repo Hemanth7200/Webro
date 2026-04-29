@@ -1,14 +1,4 @@
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const introEl = document.getElementById("intro");
-    if (introEl) introEl.style.display = "none";
-    document.body.style.overflow = "auto";
-  }, 5500);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent scrolling while intro is playing
-    document.body.style.overflow = "hidden";
     
     // Initialize Lucide Icons
     lucide.createIcons();

@@ -34,7 +34,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text-main);
-    background-color: var(--bg-color);
+    background-color: transparent; /* Changed to transparent for video background */
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
@@ -1111,130 +1111,27 @@ img {
     .hero-title { font-size: 2.5rem; }
 }
 
-/* Intro Screen */
-#intro {
+/* Fullscreen Video Background */
+.video-background {
   position: fixed;
-  inset: 0;
-  background: #f8fcff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Increased z-index to stay above other elements */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   overflow: hidden;
-  animation: hideIntro 1s ease forwards;
-  animation-delay: 4.5s;
 }
 
-/* Light tech background lines */
-.bg-lines {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(120deg, transparent 70%, rgba(0, 180, 255, 0.12) 70%),
-    linear-gradient(40deg, transparent 65%, rgba(0, 180, 255, 0.1) 65%);
-  opacity: 0.7;
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps same video style */
 }
 
-/* Electric line entering from left */
-.energy-line {
-  position: absolute;
-  left: -40%;
-  top: 50%;
-  width: 45%;
-  height: 5px;
-  background: linear-gradient(90deg, transparent, #00eaff, #1168ff);
-  box-shadow: 0 0 15px #00eaff, 0 0 35px #00eaff;
-  animation: energyMove 2.2s ease-in-out forwards;
-}
-
-.energy-line::before,
-.energy-line::after {
+/* Optional light overlay for text visibility */
+.video-background::after {
   content: "";
   position: absolute;
-  width: 90px;
-  height: 5px;
-  background: #00eaff;
-  box-shadow: 0 0 20px #00eaff;
-}
-
-.energy-line::before {
-  top: -45px;
-  left: 120px;
-  transform: rotate(40deg);
-}
-
-.energy-line::after {
-  top: 45px;
-  left: 160px;
-  transform: rotate(-35deg);
-}
-
-/* Logo */
-.logo-box {
-  text-align: center;
-  transform: scale(0.7);
-  opacity: 0;
-  animation: logoReveal 1.3s ease forwards;
-  animation-delay: 1.6s;
-}
-
-.logo-icon {
-  font-size: 90px;
-  color: #00c6ff;
-  filter: drop-shadow(0 0 18px #00eaff);
-  animation: pulse 1.5s infinite alternate;
-}
-
-.logo-box h1 {
-  font-size: 72px;
-  letter-spacing: 4px;
-  color: #071b5f;
-}
-
-.logo-box p {
-  margin-top: 10px;
-  color: #0877c8;
-  font-size: 18px;
-}
-
-/* Animations */
-@keyframes energyMove {
-  0% {
-    left: -45%;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    left: 28%;
-    opacity: 0.9;
-  }
-}
-
-@keyframes logoReveal {
-  0% {
-    opacity: 0;
-    transform: scale(0.7) translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes pulse {
-  from {
-    filter: drop-shadow(0 0 8px #00eaff);
-  }
-  to {
-    filter: drop-shadow(0 0 30px #00eaff);
-  }
-}
-
-@keyframes hideIntro {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
 }
