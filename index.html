@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webro Studio - Smart Digital Solutions</title>
+    <meta name="description" content="We build websites that help businesses grow. From professional websites to web applications and automation systems.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide via unpkg) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Intro Animation -->
+    <div id="intro">
+        <div class="bg-lines"></div>
+
+        <div class="energy-line"></div>
+
+        <div class="logo-box">
+            <div class="logo-icon">⚙️</div>
+            <h1>WEBRO</h1>
+            <p>Websites • Automation • Growth</p>
+        </div>
+    </div>
+
+    <!-- Background 3D Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <span>Webro<span>Studio</span></span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary btn-small">Let's Talk</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <div class="tagline">
+                        <span class="tag-icon"><i data-lucide="sparkles"></i></span>
+                        Smart Digital Solutions for Growing Businesses
+                    </div>
+                    <h1 class="hero-title">We Build Websites That Help Businesses <span>Grow</span></h1>
+                    <p class="hero-subtitle">From professional websites and web applications to automation systems and digital marketing, we help businesses build a strong online presence and generate better results with smart digital solutions.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-glow">Book Free Consultation</a>
+                        <a href="#portfolio" class="btn btn-secondary">View Our Work <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="trust-line">
+                        <div class="avatars">
+                            <div class="avatar"><img src="https://i.pravatar.cc/100?img=1" alt="Client"></div>
+                            <div class="avatar"><img src="https://i.pravatar.cc/100?img=2" alt="Client"></div>
+                            <div class="avatar"><img src="https://i.pravatar.cc/100?img=3" alt="Client"></div>
+                        </div>
+                        <p>Helping startups and local businesses grow digitally</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- The 3D effect will largely be background, but we'll put a 3D CSS card here -->
+                    <div class="floating-card 3d-card" id="hero-card">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <div class="dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                                <div class="chart-wrapper">
+                                    <div class="bar bar-1"></div>
+                                    <div class="bar bar-2"></div>
+                                    <div class="bar bar-3"></div>
+                                    <div class="bar bar-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about section">
+            <div class="container about-container">
+                <div class="about-visual reveal left">
+                    <div class="image-wrapper 3d-card">
+                        <img src="images/about_team.png" alt="Team working">
+                        <div class="glass-badge">
+                            <div class="badge-icon"><i data-lucide="target"></i></div>
+                            <div class="badge-text">
+                                <strong>Goal Driven</strong>
+                                <span>Practical Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal right">
+                    <div class="section-header">
+                        <h2>Who We Are</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="about-text">
+                        <p class="highlight-text">We are a passionate digital solutions team focused on helping businesses grow through modern websites, web applications, automation systems, and digital marketing services.</p>
+                        <p>We believe every business deserves a strong online presence with clean design, smooth user experience, and smart systems that save time and improve growth.</p>
+                        <p>We work closely with every client to understand their business goals and deliver practical solutions that create real impact.</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Fast</h3>
+                            <p>Delivery Time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="services section light-bg">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="small-tagline">What We Do</span>
+                    <h2>Services We Provide</h2>
+                    <p class="sub-heading">Simple, smart, and business-focused digital solutions.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card 3d-card reveal up" style="transition-delay: 0.1s">
+                        <div class="service-icon"><i data-lucide="layout"></i></div>
+                        <h3>Website Development</h3>
+                        <p>Professional static and dynamic websites designed for businesses, startups, portfolios, and service brands.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card 3d-card reveal up" style="transition-delay: 0.2s">
+                        <div class="service-icon"><i data-lucide="monitor-smartphone"></i></div>
+                        <h3>Web Applications</h3>
+                        <p>Custom-built systems like student portals, admin dashboards, attendance systems, booking platforms, and management software.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card 3d-card reveal up" style="transition-delay: 0.3s">
+                        <div class="service-icon"><i data-lucide="bot"></i></div>
+                        <h3>Automation Systems</h3>
+                        <p>WhatsApp automation, lead management, follow-up systems, CRM workflows, and process automation.</p>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="service-card 3d-card reveal up" style="transition-delay: 0.4s">
+                        <div class="service-icon"><i data-lucide="trending-up"></i></div>
+                        <h3>Digital Marketing</h3>
+                        <p>Social media support, lead generation strategy, SEO basics, and online business growth solutions.</p>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="service-card 3d-card reveal up" style="transition-delay: 0.5s">
+                        <div class="service-icon"><i data-lucide="wrench"></i></div>
+                        <h3>Website Maintenance</h3>
+                        <p>Website updates, speed optimization, bug fixing, hosting support, and long-term maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="portfolio section">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="small-tagline">Our Recent Work</span>
+                    <h2>Projects We’ve Worked On</h2>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="portfolio-item 3d-card reveal">
+                        <div class="portfolio-img">
+                            <img src="images/portfolio_coaching.png" alt="Coaching Institute">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Coaching Institute Website</h3>
+                            <p>Professional website for student admissions, course details, and lead generation.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item 3d-card reveal" style="transition-delay: 0.1s">
+                        <div class="portfolio-img">
+                            <img src="images/portfolio_attendance.png" alt="Attendance System">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Student Attendance System</h3>
+                            <p>A simple admin-based attendance system with student tracking and reporting.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item 3d-card reveal" style="transition-delay: 0.2s">
+                        <div class="portfolio-img">
+                            <img src="images/portfolio_realestate.png" alt="Real Estate">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Real Estate Lead Website</h3>
+                            <p>Landing page with lead collection forms and follow-up automation support.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item 3d-card reveal" style="transition-delay: 0.3s">
+                        <div class="portfolio-img">
+                            <img src="images/portfolio_restaurant.png" alt="Restaurant Booking">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Restaurant Booking Website</h3>
+                            <p>Website with online booking, menu display, and customer inquiry management.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item 3d-card reveal" style="transition-delay: 0.4s">
+                        <div class="portfolio-img">
+                            <img src="images/portfolio_smallbiz.png" alt="Small Business">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Small Business Portfolio</h3>
+                            <p>Professional brand website for local business visibility and client trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US SECTION -->
+        <section class="features section light-bg">
+            <div class="container features-container">
+                <div class="features-content reveal left">
+                    <div class="section-header">
+                        <h2>Why Clients Work With Us</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle-2"></i> Clean and Modern Design</li>
+                        <li><i data-lucide="check-circle-2"></i> Fast Delivery</li>
+                        <li><i data-lucide="check-circle-2"></i> Affordable Pricing</li>
+                        <li><i data-lucide="check-circle-2"></i> Mobile Responsive Websites</li>
+                        <li><i data-lucide="check-circle-2"></i> Business-Focused Approach</li>
+                        <li><i data-lucide="check-circle-2"></i> Personal Client Support</li>
+                        <li><i data-lucide="check-circle-2"></i> Reliable Communication</li>
+                        <li><i data-lucide="check-circle-2"></i> Long-Term Service Support</li>
+                    </ul>
+                </div>
+                <div class="features-visual reveal right">
+                    <!-- 3D Abstract elements using CSS -->
+                    <div class="abstract-shape shape-1"></div>
+                    <div class="abstract-shape shape-2"></div>
+                    <div class="glass-panel 3d-card">
+                        <div class="panel-header">Performance Metrics</div>
+                        <div class="panel-body">
+                            <div class="metric">
+                                <div class="metric-info"><span>Speed</span><span>99%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 99%"></div></div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-info"><span>SEO</span><span>95%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-info"><span>Responsiveness</span><span>100%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK PROCESS SECTION -->
+        <section class="process section">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="small-tagline">Our Process</span>
+                    <h2>How We Work</h2>
+                </div>
+                <div class="process-steps">
+                    <div class="step reveal">
+                        <div class="step-number">01</div>
+                        <h3>Requirement Discussion</h3>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step reveal" style="transition-delay: 0.1s">
+                        <div class="step-number">02</div>
+                        <h3>Planning and Strategy</h3>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step reveal" style="transition-delay: 0.2s">
+                        <div class="step-number">03</div>
+                        <h3>Design and Development</h3>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step reveal" style="transition-delay: 0.3s">
+                        <div class="step-number">04</div>
+                        <h3>Testing and Final Review</h3>
+                    </div>
+                    <div class="step-connector reveal"></div>
+                    <div class="step reveal" style="transition-delay: 0.4s">
+                        <div class="step-number">05</div>
+                        <h3>Launch and Support</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials section light-bg">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="small-tagline">Client Feedback</span>
+                    <h2>What Clients Say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card 3d-card reveal up">
+                        <div class="quote-icon"><i data-lucide="quote"></i></div>
+                        <p class="testimonial-text">“Very professional and supportive throughout the project. The website was delivered clean and exactly as expected.”</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><img src="https://i.pravatar.cc/100?img=4" alt="Client"></div>
+                            <div class="author-info">
+                                <strong>Client Review</strong>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card 3d-card reveal up" style="transition-delay: 0.1s">
+                        <div class="quote-icon"><i data-lucide="quote"></i></div>
+                        <p class="testimonial-text">“Quick response, smooth communication, and good quality work. Highly recommended for business websites.”</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><img src="https://i.pravatar.cc/100?img=5" alt="Client"></div>
+                            <div class="author-info">
+                                <strong>Client Review</strong>
+                                <span>Startup Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card 3d-card reveal up" style="transition-delay: 0.2s">
+                        <div class="quote-icon"><i data-lucide="quote"></i></div>
+                        <p class="testimonial-text">“Helped us build our online presence with a simple and effective website. Great experience working together.”</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><img src="https://i.pravatar.cc/100?img=6" alt="Client"></div>
+                            <div class="author-info">
+                                <strong>Client Review</strong>
+                                <span>Local Business</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="pricing" class="pricing section">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="small-tagline">Simple Pricing</span>
+                    <h2>Affordable Plans for Every Business</h2>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Plan 1 -->
+                    <div class="pricing-card 3d-card reveal up">
+                        <div class="pricing-header">
+                            <h3>Starter Website</h3>
+                            <div class="price"><span>₹</span>3,999<span>+</span></div>
+                            <p>Perfect for personal brands and small businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Static Website</li>
+                            <li><i data-lucide="check"></i> Mobile Responsive</li>
+                            <li><i data-lucide="check"></i> Contact Form</li>
+                            <li><i data-lucide="check"></i> Basic SEO Setup</li>
+                            <li><i data-lucide="check"></i> 1 Month Support</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Plan 2 -->
+                    <div class="pricing-card popular 3d-card reveal up" style="transition-delay: 0.1s">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Business Website</h3>
+                            <div class="price"><span>₹</span>9,999<span>+</span></div>
+                            <p>Perfect for growing businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Dynamic Website</li>
+                            <li><i data-lucide="check"></i> Admin Panel</li>
+                            <li><i data-lucide="check"></i> Database Support</li>
+                            <li><i data-lucide="check"></i> SEO Optimization</li>
+                            <li><i data-lucide="check"></i> 2 Months Support</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#contact" class="btn btn-primary btn-glow w-100">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="pricing-card 3d-card reveal up" style="transition-delay: 0.2s">
+                        <div class="pricing-header">
+                            <h3>Web Application</h3>
+                            <div class="price"><span>₹</span>14,999<span>+</span></div>
+                            <p>Perfect for advanced business systems</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Admin Dashboard</li>
+                            <li><i data-lucide="check"></i> Custom Features</li>
+                            <li><i data-lucide="check"></i> Database Integration</li>
+                            <li><i data-lucide="check"></i> User Management System</li>
+                            <li><i data-lucide="check"></i> Business Workflow Setup</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-grid grid-2 mt-4">
+                    <!-- Plan 4 -->
+                    <div class="pricing-card 3d-card reveal up">
+                        <div class="pricing-header">
+                            <h3>Digital Marketing</h3>
+                            <div class="price"><span>₹</span>3,999<span>+</span></div>
+                            <p>Perfect for business growth and lead generation</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Social Media Support</li>
+                            <li><i data-lucide="check"></i> Basic SEO</li>
+                            <li><i data-lucide="check"></i> Lead Generation Strategy</li>
+                            <li><i data-lucide="check"></i> Content Planning</li>
+                            <li><i data-lucide="check"></i> Performance Guidance</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Plan 5 -->
+                    <div class="pricing-card 3d-card reveal up" style="transition-delay: 0.1s">
+                        <div class="pricing-header">
+                            <h3>Automation Setup</h3>
+                            <div class="price"><span>₹</span>5,999<span>+</span></div>
+                            <p>Perfect for reducing manual work and improving workflow</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> WhatsApp Automation</li>
+                            <li><i data-lucide="check"></i> Lead Follow-Up System</li>
+                            <li><i data-lucide="check"></i> CRM Workflow Setup</li>
+                            <li><i data-lucide="check"></i> Basic Process Automation</li>
+                            <li><i data-lucide="check"></i> Support & Setup Assistance</li>
+                        </ul>
+                        <div class="pricing-cta">
+                            <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq section light-bg">
+            <div class="container faq-container">
+                <div class="section-header center reveal">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item reveal">
+                        <div class="faq-question">
+                            <h3>Do you provide domain and hosting?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, complete domain setup, hosting support, and deployment assistance are provided.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">
+                            <h3>How long does website development take?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Usually 5 to 10 working days depending on the project.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">
+                            <h3>Will the website work on mobile?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, every website is fully responsive for mobile, tablet, and desktop.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">
+                            <h3>Do you provide support after launch?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, maintenance and technical support are available after project delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="cta-box 3d-card reveal">
+                    <h2>Let’s Build Something Great Together</h2>
+                    <p>Whether you're starting a new business or improving your current one, we help you create digital solutions that work.</p>
+                    <div class="cta-actions">
+                        <a href="#contact" class="btn btn-primary btn-glow">Get Free Consultation</a>
+                        <a href="https://wa.me/910000000000" class="btn btn-whatsapp"><i data-lucide="message-circle"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact section">
+            <div class="container contact-container">
+                <div class="contact-info reveal left">
+                    <div class="section-header">
+                        <h2>Contact Us</h2>
+                        <p>Have a project in mind? Let's discuss how we can help your business grow.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="icon-box"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <a href="mailto:hello@webrostudio.com">hello@webrostudio.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <a href="tel:+910000000000">+91 XXXXX XXXXX</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <span>India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper 3d-card reveal right">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Type</label>
+                            <input type="text" id="business" name="business" placeholder="e.g. Retail, Service, Startup">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service">
+                                <option value="website">Website Development</option>
+                                <option value="webapp">Web Application</option>
+                                <option value="automation">Automation System</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    <span>Webro<span>Studio</span></span>
+                </a>
+                <p>Helping businesses grow with websites, web applications, automation, and digital solutions.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><a href="mailto:hello@webrostudio.com"><i data-lucide="mail"></i> hello@webrostudio.com</a></p>
+                <p><a href="tel:+910000000000"><i data-lucide="phone"></i> +91 XXXXX XXXXX</a></p>
+                <p><span><i data-lucide="map-pin"></i> India</span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Webro Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
