@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('bg-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        const frameCount = 203;
+        const frameCount = 240;
         const currentFrame = index => (
             `Animation.Zip/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
         );
