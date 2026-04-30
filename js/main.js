@@ -211,8 +211,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const interval = 1000 / fps;
 
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            const scale = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * scale;
+            canvas.height = window.innerHeight * scale;
+            ctx.scale(scale, scale);
             render();
         }
 
@@ -220,24 +222,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
                 const img = images[currentFrameIndex];
                 
-                const canvasAspect = canvas.width / canvas.height;
+                const logicalWidth = window.innerWidth;
+                const logicalHeight = window.innerHeight;
+                
+                const canvasAspect = logicalWidth / logicalHeight;
                 const imgAspect = img.naturalWidth / img.naturalHeight;
                 let drawWidth, drawHeight, offsetX, offsetY;
 
                 if (canvasAspect > imgAspect) {
-                    drawWidth = canvas.width;
-                    drawHeight = canvas.width / imgAspect;
+                    drawWidth = logicalWidth;
+                    drawHeight = logicalWidth / imgAspect;
                     offsetX = 0;
-                    offsetY = (canvas.height - drawHeight) / 2;
+                    offsetY = (logicalHeight - drawHeight) / 2;
                 } else {
-                    drawWidth = canvas.height * imgAspect;
-                    drawHeight = canvas.height;
+                    drawWidth = logicalHeight * imgAspect;
+                    drawHeight = logicalHeight;
                     // Align to the right:
-                    offsetX = canvas.width - drawWidth; 
+                    offsetX = logicalWidth - drawWidth; 
                     offsetY = 0;
                 }
 
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, logicalWidth, logicalHeight);
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
                 ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             }
         }
