@@ -100,7 +100,7 @@ img { max-width: 100%; display: block; }
 .video-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%);
     z-index: 1;
 }
 
@@ -171,7 +171,7 @@ img { max-width: 100%; display: block; }
     align-items: center;
     padding-top: 100px;
 }
-.hero-content { max-width: 800px; }
+.hero-content { max-width: 550px; }
 .small-tagline {
     font-size: 0.8rem;
     font-weight: 700;
