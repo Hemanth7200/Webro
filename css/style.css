@@ -71,6 +71,11 @@ img { max-width: 100%; display: block; }
     padding: 0 24px;
 }
 
+.hero-container {
+    margin-left: 0;
+    max-width: 100%;
+}
+
 .section {
     padding: 120px 0;
     background: var(--bg-dark);
