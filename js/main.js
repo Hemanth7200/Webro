@@ -232,7 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     drawWidth = canvas.height * imgAspect;
                     drawHeight = canvas.height;
-                    offsetX = (canvas.width - drawWidth) / 2;
+                    // Align to the right:
+                    offsetX = canvas.width - drawWidth; 
                     offsetY = 0;
                 }
 
