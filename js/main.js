@@ -181,4 +181,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+    // -------------------------------------------------------------------------
+    // BACKGROUND IMAGE SEQUENCE ANIMATION
+    // -------------------------------------------------------------------------
+    const canvas = document.getElementById('bg-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const frameCount = 203;
+        const currentFrame = index => (
+            `Animation.Zip/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+        );
+
+        const images = [];
+        let loadedImages = 0;
+
+        // Preload images
+        for (let i = 1; i <= frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                loadedImages++;
+            };
+            images.push(img);
+        }
+
+        let currentFrameIndex = 0;
+        let lastTime = 0;
+        const fps = 24; 
+        const interval = 1000 / fps;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            render();
+        }
+
+        function render() {
+            if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
+                const img = images[currentFrameIndex];
+                
+                const canvasAspect = canvas.width / canvas.height;
+                const imgAspect = img.naturalWidth / img.naturalHeight;
+                let drawWidth, drawHeight, offsetX, offsetY;
+
+                if (canvasAspect > imgAspect) {
+                    drawWidth = canvas.width;
+                    drawHeight = canvas.width / imgAspect;
+                    offsetX = 0;
+                    offsetY = (canvas.height - drawHeight) / 2;
+                } else {
+                    drawWidth = canvas.height * imgAspect;
+                    drawHeight = canvas.height;
+                    offsetX = (canvas.width - drawWidth) / 2;
+                    offsetY = 0;
+                }
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            }
+        }
+
+        function animate(time) {
+            const delta = time - lastTime;
+            if (delta > interval) {
+                currentFrameIndex = (currentFrameIndex + 1) % frameCount;
+                render();
+                lastTime = time - (delta % interval);
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        requestAnimationFrame(animate);
+    }
 });
